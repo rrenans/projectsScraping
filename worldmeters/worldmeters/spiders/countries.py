@@ -1,6 +1,6 @@
 import scrapy
-# from scrapy.shell import inspect_response
-# from scrapy.utils.response import open_in_browser
+from scrapy.shell import inspect_response
+from scrapy.utils.response import open_in_browser
 import logging
 
 # https://www.worldometers.info/world-population/honduras-population/
@@ -26,8 +26,8 @@ class CountriesSpider(scrapy.Spider):
     def parse_country(self, response):
         logging.info(response.status)
         logging.warning(response.status)
-        # open_in_browser(response)
-        # inspect_response(response, self)
+        open_in_browser(response)
+        inspect_response(response, self)
         # logging.info(response.url)
         # name = response.request.meta['country_name']
         # rows = response.xpath("(//table[@class='table table-striped table-bordered table-hover table-condensed table-list'])[1]/tbody/tr")
