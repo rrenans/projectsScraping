@@ -9,12 +9,12 @@ class BookInfoSpider(CrawlSpider):
     start_urls = ['http://books.toscrape.com/']
 
     rules = (
-        Rule(LinkExtractor(allow=r'Items/'), callback='parse_item', follow=True),
+        Rule(LinkExtractor(restrict_xpaths='//article[@class="product_pod"]/div/a'), callback='parse_item', follow=True),
+        Rule(LinkExtractor(restrict_xpaths='//li[@class="next"]/a')),
     )
 
     def parse_item(self, response):
-        item = {}
-        #item['domain_id'] = response.xpath('//input[@id="sid"]/@value').get()
-        #item['name'] = response.xpath('//div[@id="name"]').get()
-        #item['description'] = response.xpath('//div[@id="description"]').get()
-        return item
+        yield {
+            'title:': response.xpath('//div[@class="col-sm-6 product_main"]/h1/text()').get(),
+            'price': response.xpath('//div[@class="col-sm-6 product_main"]/p[1]/text()').get(),
+        }
