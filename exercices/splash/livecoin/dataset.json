@@ -1,0 +1,202 @@
+[
+    {
+        "currency pair": "BTC/USD",
+        "volume(24)": "1 366.10 BTC"
+    },
+    {
+        "currency pair": "LTC/BTC",
+        "volume(24)": "117.70 BTC"
+    },
+    {
+        "currency pair": "BTC/USDT",
+        "volume(24)": "81.56 BTC"
+    },
+    {
+        "currency pair": "XLM/BTC",
+        "volume(24)": "37.63 BTC"
+    },
+    {
+        "currency pair": "XSN/BTC",
+        "volume(24)": "33.22 BTC"
+    },
+    {
+        "currency pair": "BTC/EUR",
+        "volume(24)": "17.10 BTC"
+    },
+    {
+        "currency pair": "ROOBEE/BTC",
+        "volume(24)": "12.62 BTC"
+    },
+    {
+        "currency pair": "MLGC/BTC",
+        "volume(24)": "9.06 BTC"
+    },
+    {
+        "currency pair": "BAT/BTC",
+        "volume(24)": "7.21 BTC"
+    },
+    {
+        "currency pair": "ZEC/BTC",
+        "volume(24)": "5.02 BTC"
+    },
+    {
+        "currency pair": "LSK/BTC",
+        "volume(24)": "4.37 BTC"
+    },
+    {
+        "currency pair": "ETC/BTC",
+        "volume(24)": "3.24 BTC"
+    },
+    {
+        "currency pair": "SCT/BTC",
+        "volume(24)": "2.46 BTC"
+    },
+    {
+        "currency pair": "XEM/BTC",
+        "volume(24)": "1.70 BTC"
+    },
+    {
+        "currency pair": "INCNT/BTC",
+        "volume(24)": "1.61 BTC"
+    },
+    {
+        "currency pair": "XAUR/BTC",
+        "volume(24)": "1.30 BTC"
+    },
+    {
+        "currency pair": "VMR/BTC",
+        "volume(24)": "1.14 BTC"
+    },
+    {
+        "currency pair": "ZRX/BTC",
+        "volume(24)": "1.04 BTC"
+    },
+    {
+        "currency pair": "HEDG/BTC",
+        "volume(24)": "1.03 BTC"
+    },
+    {
+        "currency pair": "PPY/BTC",
+        "volume(24)": "0.95 BTC"
+    },
+    {
+        "currency pair": "JNB/BTC",
+        "volume(24)": "0.78 BTC"
+    },
+    {
+        "currency pair": "NEO/BTC",
+        "volume(24)": "0.53 BTC"
+    },
+    {
+        "currency pair": "OD/BTC",
+        "volume(24)": "0.44 BTC"
+    },
+    {
+        "currency pair": "TRX/BTC",
+        "volume(24)": "0.43 BTC"
+    },
+    {
+        "currency pair": "PLBT/BTC",
+        "volume(24)": "0.37 BTC"
+    },
+    {
+        "currency pair": "SYS/BTC",
+        "volume(24)": "0.35 BTC"
+    },
+    {
+        "currency pair": "PTI/BTC",
+        "volume(24)": "0.31 BTC"
+    },
+    {
+        "currency pair": "PLA/BTC",
+        "volume(24)": "0.25 BTC"
+    },
+    {
+        "currency pair": "YOC/BTC",
+        "volume(24)": "0.23 BTC"
+    },
+    {
+        "currency pair": "DOGE/BTC",
+        "volume(24)": "0.19 BTC"
+    },
+    {
+        "currency pair": "CPC/BTC",
+        "volume(24)": "0.18 BTC"
+    },
+    {
+        "currency pair": "REP/BTC",
+        "volume(24)": "0.16 BTC"
+    },
+    {
+        "currency pair": "DOLLAR/BTC",
+        "volume(24)": "0.16 BTC"
+    },
+    {
+        "currency pair": "TNS/BTC",
+        "volume(24)": "0.13 BTC"
+    },
+    {
+        "currency pair": "XFC/BTC",
+        "volume(24)": "0.12 BTC"
+    },
+    {
+        "currency pair": "BLK/BTC",
+        "volume(24)": "0.11 BTC"
+    },
+    {
+        "currency pair": "LINK/BTC",
+        "volume(24)": "0.10 BTC"
+    },
+    {
+        "currency pair": "NVC/BTC",
+        "volume(24)": "0.09 BTC"
+    },
+    {
+        "currency pair": "PELO/BTC",
+        "volume(24)": "0.08 BTC"
+    },
+    {
+        "currency pair": "UTNP/BTC",
+        "volume(24)": "0.06 BTC"
+    },
+    {
+        "currency pair": "LEO/BTC",
+        "volume(24)": "0.05 BTC"
+    },
+    {
+        "currency pair": "HB/BTC",
+        "volume(24)": "0.05 BTC"
+    },
+    {
+        "currency pair": "MNE/BTC",
+        "volume(24)": "0.05 BTC"
+    },
+    {
+        "currency pair": "ASAFE2/BTC",
+        "volume(24)": "0.05 BTC"
+    },
+    {
+        "currency pair": "CCRB/BTC",
+        "volume(24)": "0.04 BTC"
+    },
+    {
+        "currency pair": "KNC/BTC",
+        "volume(24)": "0.04 BTC"
+    },
+    {
+        "currency pair": "PPC/BTC",
+        "volume(24)": "0.04 BTC"
+    },
+    {
+        "currency pair": "DCR/BTC",
+        "volume(24)": "0.04 BTC"
+    },
+    {
+        "currency pair": "ANT/BTC",
+        "volume(24)": "0.04 BTC"
+    },
+    {
+        "currency pair": "MTL/BTC",
+        "volume(24)": "0.04 BTC"
+    }
+]
