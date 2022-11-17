@@ -38,7 +38,9 @@ class QuotesInfoSpider(scrapy.Spider):
             yield SplashRequest(url=absolute_url, callback=self.parse, endpoint='execute', args={
                 'lua_source': self.script
             })
-            
+
+
+        # DÚVIDA NISSO AQUI 
         # next_page = response.xpath('//li[@class="next"]/a/@href').get()
         # if next_page is not None:
         #     yield scrapy.Request(url=next_page, callback=self.parse)
