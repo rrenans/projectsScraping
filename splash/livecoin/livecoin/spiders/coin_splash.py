@@ -2,7 +2,7 @@ import scrapy
 from scrapy_splash import SplashRequest
 
 class CoinSpider(scrapy.Spider):
-    name = 'coin'
+    name = 'coin_splash'
     allowed_domains = ['web.archive.org']
     # start_urls = ['http://web.archive.org/']
 
