@@ -23,7 +23,7 @@ import scrapy
 
 2- Mexer em Settings, Middlewares e Pipelines (conectar com um banco)
 3- Tentar utilizar Selenium/Splash
-4- Enviar para e-mail
+4- Enviar para e-mail (Opcional)
 """
 
 class RecipeSpider(scrapy.Spider):
