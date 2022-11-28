@@ -7,4 +7,7 @@ class RecipeSpider(scrapy.Spider):
     start_urls = ['https://cooknenjoy.com/']
 
     def parse(self, response):
-        pass
+        title = response.xpath('//h1/a/text()').get()
+        yield {
+            'title': title
+        }
