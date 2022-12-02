@@ -32,7 +32,10 @@ class RecipeSpider(scrapy.Spider):
     start_urls = ['https://cooknenjoy.com/']
 
     def parse(self, response):
-        title = response.xpath('//h1/a/text()').get()
-        yield {
-            'title': title
-        }
+        recipes = response.xpath('//article[contains(@class, "simple-grid")]')
+        for recipe in recipes:
+            yield {
+                # 'name': recipe.xpath('.//header/h2[contains(@class, "entry-title")]/a/text()').get(),
+                'name': recipe.xpath('.//div[contains(@class, "wprm-recipe wprm-recipe-template-novo")]/h2/text()').get(),
+                # 'url': recipe.xpath('.//a[contains(@class, "alignnone")]/@href').get(),
+            }
