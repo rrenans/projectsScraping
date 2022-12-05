@@ -57,6 +57,7 @@ class RecipeRuleSpider(CrawlSpider):
         kitchen = response.xpath('//div[contains(@class, "wprm-recipe-cuisine-container")]/span[2]/text()').get()
         portion = response.xpath('//div[contains(@class, "wprm-recipe-servings-container")]/span[2]/text()').get()
 
+        # Parte 1
         yield {
             'Title': title,
             'Description': description,
@@ -68,4 +69,8 @@ class RecipeRuleSpider(CrawlSpider):
             'Kitchen': kitchen,
             'Portion': portion,
             'Calories': calories,
+        }
+        # Parte 2
+        yield {
+            'DJKSAFHA': 'OIFJASKFJAO'
         }
