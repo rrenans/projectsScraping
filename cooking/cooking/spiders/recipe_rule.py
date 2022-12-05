@@ -37,32 +37,35 @@ class RecipeRuleSpider(CrawlSpider):
     )
 
     def parse_item(self, response):
-        # posso pegar o tempo e fazer um for
-        tempo_preparo = response.xpath('//div[contains(@class, "wprm-recipe-prep-time-container")]/span[2]/span/text()').getall()
-        # tempo_preparo[0,2]
+        # Pegando o tempo e formatando para se tornar uma string
+        preparation_time = response.xpath('//div[contains(@class, "wprm-recipe-prep-time-container")]/span[2]/span/text()').getall()
+        stove_time = response.xpath('//div[contains(@class, "wprm-recipe-cook-time-container")]/span[2]/span/text()').getall()
+        total_time = response.xpath('//div[contains(@class, "wprm-recipe-total-time-container")]/span[2]/span/text()').getall()
+        preparation_time_format = ''.join(preparation_time)
+        stove_time_format = ''.join(stove_time)
+        total_time_format = ''.join(total_time)
 
-        # tempo
+        # Incrementação de duas listas, uma com valor e outra com tipo de unidade
+        amount_calories = response.xpath('//span[contains(@class, "wprm-recipe-nutrition-with-unit")]/span[1]/text()').get()
+        calories_unit = response.xpath('//span[contains(@class, "wprm-recipe-nutrition-with-unit")]/span[2]/text()').get()
+        calories = amount_calories + calories_unit
 
-        qtde_caloria = response.xpath('//span[contains(@class, "wprm-recipe-nutrition-with-unit")]/span[1]/text()').get()
-        unidade_caloria = response.xpath('//span[contains(@class, "wprm-recipe-nutrition-with-unit")]/span[2]/text()').get()
-        caloria = qtde_caloria + unidade_caloria
-
+        # Pegando outros valores para a spider que não precisam de um tratamento/cálculo específico
+        title = response.xpath('//h2[contains(@class, "wprm-recipe-name wprm-block-text-bold")]/text()').get()
+        description = response.xpath('//div[contains(@class, "wprm-recipe-summary wprm-block-text-normal")]/span/text()').get()
+        category = response.xpath('//div[contains(@class, "wprm-recipe-course-container")]/span[2]/text()').get()
+        kitchen = response.xpath('//div[contains(@class, "wprm-recipe-cuisine-container")]/span[2]/text()').get()
+        portion = response.xpath('//div[contains(@class, "wprm-recipe-servings-container")]/span[2]/text()').get()
 
         yield {
-            'title': response.xpath('//h2[contains(@class, "wprm-recipe-name wprm-block-text-bold")]/text()').get(),
-            'description': response.xpath('//div[contains(@class, "wprm-recipe-summary wprm-block-text-normal")]/span/text()').get(),
+            'Title': title,
+            'Description': description,
             # 'rating': response.xpath('').get(),
-
-            # gostaria de juntar os tempos em uma lista
-            'tempo de preparo': tempo_preparo,
-            # 'tempo de fogão': response.xpath('//div[contains(@class, "wprm-recipe-cook-time-container")]/span[2]/text()').get(),
-            # 'tempo total': response.xpath('//div[contains(@class, "wprm-recipe-total-time-container")]/span[2]/text()').get(),
-
-            # 'categoria': response.xpath('//div[contains(@class, "wprm-recipe-course-container")]/span[2]/text()').get(),
-            # 'cozinha': response.xpath('//div[contains(@class, "wprm-recipe-cuisine-container")]/span[2]/text()').get(),
-
-            # porções e calorias possuem dois valores, sendo a quantidade e o tipo (16kcal ou 16fatias)
-            # gostaria de juntar os dois como uma lista, ou melhor, juntar os dois como um único valor
-            # 'porções': response.xpath('//div[contains(@class, "wprm-recipe-servings-container")]/span[2]/text()').get(),
-            # 'calorias': caloria,
+            'Preparation time': preparation_time_format,
+            'Stove time': stove_time_format,
+            'Total time': total_time_format,
+            'Category': category,
+            'Kitchen': kitchen,
+            'Portion': portion,
+            'Calories': calories,
         }
