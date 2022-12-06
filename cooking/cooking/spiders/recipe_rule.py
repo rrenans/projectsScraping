@@ -80,5 +80,9 @@ class RecipeRuleSpider(CrawlSpider):
         }
         # Parte 2
         yield {
-            'DJKSAFHA': 'OIFJASKFJAO'
+            'Equipment': equipment,
+            'Preparation method': preparation_method,
+            # 'Tips': tips,
+            # 'URL': url,
+            # 'Image': image,
         }
