@@ -37,6 +37,7 @@ class RecipeRuleSpider(CrawlSpider):
     )
 
     def parse_item(self, response):
+        # Informações gerais da receita
         # Pegando o tempo e formatando para se tornar uma string
         preparation_time = response.xpath('//div[contains(@class, "wprm-recipe-prep-time-container")]/span[2]/span/text()').getall()
         stove_time = response.xpath('//div[contains(@class, "wprm-recipe-cook-time-container")]/span[2]/span/text()').getall()
