@@ -58,6 +58,13 @@ class RecipeRuleSpider(CrawlSpider):
         kitchen = response.xpath('//div[contains(@class, "wprm-recipe-cuisine-container")]/span[2]/text()').get()
         portion = response.xpath('//div[contains(@class, "wprm-recipe-servings-container")]/span[2]/text()').get()
 
+        # Informações para a realização da receita
+        equipment = response.xpath('//a[contains(@class, "wprm-recipe-equipment-link")]/text()').getall()
+        preparation_method = response.xpath('//div[contains(@class, "wprm-recipe-instruction-text")]/text()').getall()
+        # tips = response.xpath('').get()
+        # url = response.xpath('').get()
+        # image = response.xpath('').get()
+
         # Parte 1
         yield {
             'Title': title,
