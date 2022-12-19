@@ -49,7 +49,7 @@ class RecipeRuleSpider(CrawlSpider):
         # Incrementação de duas listas, uma com valor e outra com tipo de unidade
         amount_calories = response.xpath('//span[contains(@class, "wprm-recipe-nutrition-with-unit")]/span[1]/text()').get()
         calories_unit = response.xpath('//span[contains(@class, "wprm-recipe-nutrition-with-unit")]/span[2]/text()').get()
-        calories = amount_calories + calories_unit
+        calories = f'{amount_calories}{calories_unit}'
 
         # Pegando outros valores para a spider que não precisam de um tratamento/cálculo específico
         title = response.xpath('//h2[contains(@class, "wprm-recipe-name wprm-block-text-bold")]/text()').get()
@@ -61,9 +61,9 @@ class RecipeRuleSpider(CrawlSpider):
         # Informações para a realização da receita
         equipment = response.xpath('//a[contains(@class, "wprm-recipe-equipment-link")]/text()').getall()
         preparation_method = response.xpath('//div[contains(@class, "wprm-recipe-instruction-text")]/text()').getall()
-        # tips = response.xpath('').get()
+        tips = response.xpath('//div[contains(@class, "wprm-recipe-notes")]/span[2]/text()').getall()
         # url = response.xpath('').get()
-        # image = response.xpath('').get()
+        image = response.xpath('//div[contains(@class, "wprm-recipe-notes")]/span/img/@src').getall()
 
         # Parte 1
         yield {
@@ -77,12 +77,11 @@ class RecipeRuleSpider(CrawlSpider):
             'Kitchen': kitchen,
             'Portion': portion,
             'Calories': calories,
-        }
-        # Parte 2
-        yield {
-            'Equipment': equipment,
-            'Preparation method': preparation_method,
-            # 'Tips': tips,
-            # 'URL': url,
-            # 'Image': image,
+            'Others': {
+                'Equipment': equipment,
+                'Preparation method': preparation_method,
+                'Tips': tips,
+                # 'URL': url,
+                'Image': image,
+            }
         }
