@@ -34,7 +34,13 @@ class RecipeRuleSpider(CrawlSpider):
 
     rules = (
         Rule(LinkExtractor(restrict_xpaths='//article[contains(@class, "simple-grid")]/a'), callback='parse_item', follow=True),
+        # Tentando percorrer pelas páginas com RUle
+        # Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "alignright")]/a/@href')),
     )
+    # Tentando percorrer página com forma padrão do Scrapy
+    # nextPage = response.xpath('//div[contains(@class, "alignright")]/a/@href').get()
+    # if nextPage:
+    #     yield scrapy.Request(url=nextPage, callback=self.parse)
 
     def parse_item(self, response):
         # Informações gerais da receita
@@ -65,7 +71,6 @@ class RecipeRuleSpider(CrawlSpider):
         # url = response.xpath('').get()
         image = response.xpath('//div[contains(@class, "wprm-recipe-notes")]/span/img/@src').getall()
 
-        # Parte 1
         yield {
             'Title': title,
             'Description': description,

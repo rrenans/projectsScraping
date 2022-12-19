@@ -36,6 +36,6 @@ class RecipeSpider(scrapy.Spider):
         for recipe in recipes:
             yield {
                 # 'name': recipe.xpath('.//header/h2[contains(@class, "entry-title")]/a/text()').get(),
-                'name': recipe.xpath('.//div[contains(@class, "wprm-recipe wprm-recipe-template-novo")]/h2/text()').get(),
+                'name': recipe.xpath('.//div[contains(@class, "wprm-recipe wprm-recipe-template-novo")]/h2/text()').getall(),
                 # 'url': recipe.xpath('.//a[contains(@class, "alignnone")]/@href').get(),
             }
