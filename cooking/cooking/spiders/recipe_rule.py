@@ -35,7 +35,7 @@ class RecipeRuleSpider(CrawlSpider):
     rules = (
         Rule(LinkExtractor(restrict_xpaths='//article[contains(@class, "simple-grid")]/a'), callback='parse_item', follow=True),
         # Tentando percorrer pelas páginas com RUle
-        # Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "alignright")]/a/@href')),
+        Rule(LinkExtractor(restrict_xpaths='.//div[contains(@class, "alignright")]/a/@href')),
     )
     # Tentando percorrer página com forma padrão do Scrapy
     # nextPage = response.xpath('//div[contains(@class, "alignright")]/a/@href').get()
