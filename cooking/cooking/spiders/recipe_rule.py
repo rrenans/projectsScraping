@@ -31,11 +31,13 @@ class RecipeRuleSpider(CrawlSpider):
     name = 'recipe_rule'
     allowed_domains = ['cooknenjoy.com']
     start_urls = ['https://cooknenjoy.com/']
+    # start_urls = ['https://cooknenjoy.com/category/receita/']
 
     rules = (
         Rule(LinkExtractor(restrict_xpaths='//article[contains(@class, "simple-grid")]/a'), callback='parse_item', follow=True),
         # Tentando percorrer pelas páginas com RUle
-        Rule(LinkExtractor(restrict_xpaths='.//div[contains(@class, "alignright")]/a/@href')),
+        Rule(LinkExtractor(restrict_xpaths='//a[@class="more-link ml-c"]')),
+        Rule(LinkExtractor(restrict_xpaths='//div[@class="pagination-next alignright"]/a')),
     )
     # Tentando percorrer página com forma padrão do Scrapy
     # nextPage = response.xpath('//div[contains(@class, "alignright")]/a/@href').get()
